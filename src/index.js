@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fetchImages();
     fetchBreeds();
 });
+
 const breedUrl = 'https://dog.ceo/api/breeds/list/all'
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 
@@ -40,14 +41,16 @@ function addImages(object){
 
 
 function addBreed(object){
-    nameObj = object["message"].key
+   
+    const nameObj = Object.keys(object["message"])
+    
     const hElement = document.getElementById("dog-breeds");
     for (const name of nameObj){
        hElement.innerHTML += 
        `
-       <li> ${name} </li
+       <li class ="dog-text"> ${name} </li> <br>
        `
-
+    //    document.getElementById("dog-text").style.color = 'red'
   }
 
 }
