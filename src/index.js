@@ -48,9 +48,21 @@ function addBreed(object){
     for (const name of nameObj){
        hElement.innerHTML += 
        `
-       <li class ="dog-text"> ${name} </li> <br>
+       <li class ="dog-text">${name}</li> <br>
        `
-    //    document.getElementById("dog-text").style.color = 'red'
-  }
+    }
+
+    const textElement =  document.getElementsByClassName("dog-text")
+    // hElement.addEventListener('click', changeTextColor)
+    for( const li of textElement){
+        li.addEventListener('click', changeTextColor =>{
+            li.style.color = "magenta"
+        })
+    }
 
 }
+
+// function changeTextColor{
+
+    
+// }
